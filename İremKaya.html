@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title>PSD UYGULAMASI</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <script src="https://kit.fontawesome.com/2de4c1298c.js" crossorigin="anonymous"></script>
+        <style>
+            body{
+                background-color: rgb(46, 45, 45);margin-top: 0px;
+            }
+            #ana_div{
+                height:100%;width:80%; margin: auto;
+            }
+            .button_event{
+                margin-top: 2%; border-radius: 7px;background-color:rgb(85, 84, 84);color: white;
+                width: 100px;height: 25px;outline: none;
+            }
+            img{ height: 100%; width:100%;}
+            #slider_div{
+                width: 100%;height: 55%;margin-top: 3%;
+            }
+            #alt_div{ margin-top: 5%; }
+            #alt_sol_div{
+                width: 34%;height: 30%;float: left;margin-right: 1%;
+            }
+            #resim_1{
+                background-color:black;width:55%;height: 100%;margin-right: 4%;float: left;
+            }
+            #combobox_div{
+                width: 41%; height: 40%; float: right;
+            }
+            #combobox{
+                width: 62%;height: 50%;background-color: rgb(85, 84, 84);color: white;border-radius: 12px;;
+                outline: none;text-align: justify;
+            }
+            #up{
+                position: absolute; margin-left:-1.9%;margin-top: 0.5%;
+            }
+            #down{
+                position: absolute; margin-left: -1.9%;;margin-top: 1.5%;
+            }
+            #resim_2{
+                background-color:black;width:41%;height:60%;float: right;
+            }
+            #alt_orta_div{
+                 width: 43%;height:30% ;float: left;margin-left: 1%;margin-right: 1%;
+            }
+            #alt_orta_div i{
+                position: absolute; margin-left: -20px;margin-top: 3px;
+            }
+            #search_div{
+                height: 40%;width: 100%;
+            }
+            #search{
+                width: 100%;background:rgb(85, 84, 84);border-radius: 7px;color:white;outline: none;
+            }
+            #resim_3{
+                background-color:black;width:40%;height: 60%;float: left;
+            }
+            #alt_sag_div{
+                width: 19%;height: 45%;float: right;margin-left: 1%;
+            }
+            #dropdown_div{
+                width: 100%;height:42%;padding-bottom: 8%;position: relative;
+            }
+            #dropdown_div ul{
+               list-style-type: none; margin: 0;padding: 0;
+           }
+           #dropdown ul a{
+               background-color: rgb(116, 113, 113);display: block;text-align: center; border-radius: 7px;color: white;
+           }
+           #dropdown ul a:hover{ background-color: rgb(85, 84, 84); }
+           #dropdown_div ul li ul{ display: none; }
+           #dropdown_div ul li:hover ul{ display: block; }
+           #dropdown{
+               background-color:rgb(85, 84, 84); border-radius: 7px; height: 20px;width: 100%;
+           }
+           #options_resim_div{
+                width: 100%;height:42%;padding-bottom: 8%;position: relative;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="ana_div">
+            <input type="submit" class="button_event" value="Button" onmouseover="button1_hover()"  onclick="button1_click()"/><br><br>
+            <input type="submit" class="button_event" value="Button" onmouseover="button2_hover()"  onclick="button2_click()"/>
+            <div id="slider_div">
+                <ul class="slider">
+                    <li><img src="https://i.picsum.photos/id/402/1200/715.jpg?hmac=8MggDIRraVWL2s5OVWAVztJELhlv-MyVwuE4nFolsFU" /></li>
+                    <li><img src="https://i.picsum.photos/id/408/2909/1934.jpg?hmac=cOpptC-KVCW51r2wCpytYzuPNuV3a87HUpDYFSS3TVI" /></li>
+                    <li><img src="https://i.picsum.photos/id/265/3264/2448.jpg?hmac=rfUdPrULxf4Rgf_pVL613jEH5tzygBpgAlZNsBSmv9w" /></li>
+                    <li><img src="https://i.picsum.photos/id/524/5616/3744.jpg?hmac=sxWIps7KJD3AR9QZwR_LR1vuRg69TAyLTjaAvE0_VcA" /></li>
+                </ul> 
+            </div>
+            <div id=alt_div>
+                <div id="alt_sol_div">
+                    <div id=resim_1><img src="https://i.picsum.photos/id/690/4288/2848.jpg?hmac=lwLtbeI7ZHB51jQL-KoZxRX0_BQ6_-krwixFTV12N4g" /></div>
+                    <div id=combobox_div>
+                        <button id="combobox" value="1000">1000</button>
+                        <i id="up" class="fas fa-angle-up" onclick="artir()"></i>
+                        <i id="down" class="fas fa-angle-down" onclick="azalt()"></i>
+                        <input type="radio"> <input  type="radio">                    
+                    </div>
+                    <div id=resim_2><img src="https://i.picsum.photos/id/430/5302/3534.jpg?hmac=cA_Vn3cGtiQ50c6KQpITTgCooWaUOEd7cUewOC_0cUU" /></div>
+                </div>
+                <div id=alt_orta_div>
+                    <div id="search_div"><input id="search" type="text" placeholder="Search..."><i class="fas fa-search"></i></div>
+                    <div id="resim_3"><img class="resim_div" src="https://i.picsum.photos/id/857/6935/4283.jpg?hmac=0Klcw4DXHRu-IqUHEVAIp-e8vaLE_MPbqRJuS3WHe9E" /></div>
+                </div>
+                <div id="alt_sag_div">
+                    <div id="dropdown_div">
+                        <ul>
+                            <li id="dropdown"><a></a><br>
+                                <ul>
+                                    <li><a onclick="resim1()">Option 1</a></li>
+                                    <li><a onclick="resim2()">Option 2</a></li>
+                                    <li><a onclick="resim3()">Option 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="options_resim_div"><img src="https://i.picsum.photos/id/238/2560/1440.jpg?hmac=wKo4dLHwDntZmO_fdtnKtsnmRcPMACca3m5J5vx2AVc" /></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+            $('.slider').bxSlider();
+            });
+            function button1_hover() {
+                document.getElementsByClassName("button_event")[0].style.marginLeft="100px";
+                document.getElementsByClassName("button_event")[0].value="Hover";
+                document.getElementsByClassName("button_event")[0].style.backgroundColor="lightblue";
+            }
+            function button1_click() {
+                document.getElementsByClassName("button_event")[0].style.marginLeft="200px";
+                document.getElementsByClassName("button_event")[0].value="Active";
+                document.getElementsByClassName("button_event")[0].style.backgroundColor="lightblue";
+            }
+            function button2_hover() {
+                document.getElementsByClassName("button_event")[1].style.marginLeft="100px";
+                document.getElementsByClassName("button_event")[1].value="Hover";
+                document.getElementsByClassName("button_event")[1].style.backgroundColor="gold ";
+            }
+            function button2_click() {
+                document.getElementsByClassName("button_event")[1].style.marginLeft="200px";
+                document.getElementsByClassName("button_event")[1].value="Active";
+                document.getElementsByClassName("button_event")[1].style.backgroundColor="gold ";
+            }
+            function resim1() {
+                document.getElementById("options_resim_div").innerHTML="<img style='width: 100%;height: 100%;' src='https://i.picsum.photos/id/690/4288/2848.jpg?hmac=lwLtbeI7ZHB51jQL-KoZxRX0_BQ6_-krwixFTV12N4g'/>";
+            }
+            function resim2() {
+                document.getElementById("options_resim_div").innerHTML="<img style='width: 100%;height: 100%;' src='https://i.picsum.photos/id/430/5302/3534.jpg?hmac=cA_Vn3cGtiQ50c6KQpITTgCooWaUOEd7cUewOC_0cUU'/>";
+            }
+            function resim3() {
+                document.getElementById("options_resim_div").innerHTML="<img style='width: 100%;height: 100%;' src='https://i.picsum.photos/id/857/6935/4283.jpg?hmac=0Klcw4DXHRu-IqUHEVAIp-e8vaLE_MPbqRJuS3WHe9E'/>";
+            }
+            
+            function artir() {
+                var deger=document.getElementById("combobox").value;
+                document.getElementById("combobox").value=Number(deger)+1;
+                document.getElementById("combobox").innerHTML=Number(deger)+1;
+            }
+            function azalt() {
+                var deger=document.getElementById("combobox").value;
+                document.getElementById("combobox").value=Number(deger)-1;
+                document.getElementById("combobox").innerHTML=Number(deger)-1;
+            }
+        </script>
+    </body>
+</html>
